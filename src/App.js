@@ -11,6 +11,8 @@ import StartCanvas from "./components/canvas/Stars";
 import Projects from "./components/sections/Projects";
 import Contact from "./components/sections/Contact";
 import Footer from "./components/sections/Footer";
+import Achievements from "./components/sections/Achievements";
+
 
 // App styling
 const Body = styled.div`
@@ -76,6 +78,7 @@ function App() {
             <Wrapper>
               <Skills />
               <Experience />
+              <Achievements />
             </Wrapper>
             <Projects />
             <Wrapper>
