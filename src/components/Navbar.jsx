@@ -126,6 +126,8 @@ const MobileMenu = styled.ul`
   z-index: ${({ isOpen }) => (isOpen ? "1000" : "-1000")};
 `;
 
+// ...imports remain unchanged
+
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const theme = useTheme();
@@ -139,19 +141,23 @@ const Navbar = () => {
           <MenuRounded style={{ color: theme.text_primary }} />
         </MobileIcon>
 
+        {/* Desktop Menu */}
         <NavItems>
           <NavLink href="#About">About</NavLink>
           <NavLink href="#Skills">Skills</NavLink>
           <NavLink href="#Experience">Experience</NavLink>
+          <NavLink href="#Achievements">Achievements</NavLink> {/* ✅ New */}
           <NavLink href="#Projects">Projects</NavLink>
           <NavLink href="#Education">Education</NavLink>
         </NavItems>
 
+        {/* Mobile Dropdown Menu */}
         {isOpen && (
           <MobileMenu isOpen={isOpen}>
             <NavLink onClick={() => setIsOpen(false)} href="#About">About</NavLink>
             <NavLink onClick={() => setIsOpen(false)} href="#Skills">Skills</NavLink>
             <NavLink onClick={() => setIsOpen(false)} href="#Experience">Experience</NavLink>
+            <NavLink onClick={() => setIsOpen(false)} href="#Achievements">Achievements</NavLink> {/* ✅ New */}
             <NavLink onClick={() => setIsOpen(false)} href="#Projects">Projects</NavLink>
             <NavLink onClick={() => setIsOpen(false)} href="#Education">Education</NavLink>
             <GithubButton href={Bio.github} target="_blank">
